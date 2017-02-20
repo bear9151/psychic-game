@@ -21,10 +21,10 @@ window.onload = function() {
 		console.log("currentLetter: " + currentLetter);
 		guessesLeft = 9;
 		userGuess = [""];
-		document.querySelector("#wins").innerHTML = "Wins: " + wins;
-		document.querySelector("#losses").innerHTML = "Losses: " + losses;
-		document.querySelector("#guesses-left").innerHTML = "Guesses Left: " + guessesLeft;
-		document.querySelector("#guesses-so-far").innerHTML = "Your Guesses so far: ";
+		document.querySelector("#wins").innerHTML = wins;
+		document.querySelector("#losses").innerHTML = losses;
+		document.querySelector("#guesses-left").innerHTML = guessesLeft;
+		document.querySelector("#guesses-so-far").innerHTML = " ";
 	};
 
 	//Calling initial new game function
@@ -34,29 +34,33 @@ window.onload = function() {
 	//When a key is pressed
 
 	document.onkeyup = function(event) {
-		if (event.keyCode >= 65 
-				&& event.keyCode <= 90 
-				&& event.key != userGuess[1] 
-				&& event.key != userGuess[2] 
-				&& event.key != userGuess[3] 
-				&& event.key != userGuess[4] 
-				&& event.key != userGuess[5] 
-				&& event.key != userGuess[6] 
-				&& event.key != userGuess[7] 
-				&& event.key != userGuess[8] 
-				&& event.key != userGuess[9]) {
+		if (
+			event.keyCode >= 65 
+			&& event.keyCode <= 90 
+			&& event.key != userGuess[1] 
+			&& event.key != userGuess[2] 
+			&& event.key != userGuess[3] 
+			&& event.key != userGuess[4] 
+			&& event.key != userGuess[5] 
+			&& event.key != userGuess[6] 
+			&& event.key != userGuess[7] 
+			&& event.key != userGuess[8] 
+			&& event.key != userGuess[9]
+			) {
 			userGuess.push(event.key);
 			if (event.key === currentLetter) {
 				wins++;
+				alert("You guessed the correct letter!");
 				newGame();
 			} else {
 				guessesLeft--;
 				if (guessesLeft === 0) {
 					losses++;
+					alert("Sorry! The letter was: " + currentLetter.toUpperCase() );
 					newGame();
 				} else {
-				document.querySelector("#guesses-left").innerHTML = "Guesses Left: " + guessesLeft;
-				document.querySelector("#guesses-so-far").append(" " + event.key + ",");
+				document.querySelector("#guesses-left").innerHTML = guessesLeft;
+				document.querySelector("#guesses-so-far").append(" " + event.key + " ");
 				}
 			}
 		};

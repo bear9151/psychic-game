@@ -3,15 +3,60 @@
 	<head>
 		<title>The Psychic Game</title>
 		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css"> 
 		<script type="text/javascript" src="assets/javascript/game.js"></script>
 	</head>
 	<body>
-		<h1>The Psychic Game</h1>
-		<h2>Guess what letter I'm thinking of</h2>
-		<h2 id="wins"></h2>
-		<h2 id="losses"></h2>
-		<h2 id="guesses-left"></h2>
-		<h2 id="guesses-so-far"></h2>
+		<div class="container">
+			<div class="jumbotron">
+				<h1 class="text-center">The Psychic Game</h1>
+			</div>
+			<h3 class="text-center">A random letter from A-Z has been selected. Use the keyboard to make a guess!</h3>
+			<hr>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h3 class="panel-title text-center">Wins</h3>
+						</div>
+						<div class="panel-body">
+							<h1 id="wins" class="text-center"></h1>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="panel panel-danger">
+						<div class="panel-heading">
+							<h3 class="panel-title text-center">Losses</h3>
+						</div>
+						<div class="panel-body">
+							<h1 id="losses" class="text-center"></h1>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="panel panel-warning">
+						<div class="panel-heading">
+							<h3 class="panel-title text-center">Guesses Left</h3>
+						</div>
+						<div class="panel-body">
+							<h1 id="guesses-left" class="text-center"></h1>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<h3 class="panel-title text-center">Letters Already Guessed</h3>
+						</div>
+						<div class="panel-body">
+							<h1 id="guesses-so-far" class="text-center"></h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
